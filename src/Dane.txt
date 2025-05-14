@@ -1,0 +1,61 @@
+Audi;S e-tron GT;Launch Edition quattro;559000
+Audi;S e-tron GT;quattro;599000
+Audi;RS e-tron GT;quattro;699900
+Audi;RS e-tron GT;performance quattro;768100
+Audi;A6 Avant e-tron;e-tron;307400
+Audi;A6 Avant e-tron;performance;368700
+Audi;A6 Avant e-tron;quattro;388400
+Audi;S6 Avant e-tron;quattro;482100
+Audi;A6 Sportback e-tron;e-tron;299900
+Audi;A6 Sportback e-tron;e-tron performance;361200
+Audi;A6 Sportback e-tron;e-tron quattro;380900
+Audi;S6 Sportback e-tron;quattro;474600
+Audi;Q6 e-tron;Performance;337200
+Audi;Q6 e-tron;e-tron;306000
+Audi;Q6 e-tron;e-tron quattro;355500
+Audi;Q6 Sportback;e-tron e-tron;318400
+Audi;Q6 Sportback;e-tron performance;349600
+Audi;Q6 Sportback;e-tron quattro;367900
+Audi;SQ6 e-tron;e-tron;419900
+Audi;SQ6 Sportback;e-tron quattro;432300
+Audi;Q4 e-tron;40 e-tron;213000
+Audi;Q4 e-tron;45 e-tron;248800
+Audi;Q4 e-tron;45 e-tron quattro;261400
+Audi;Q4 e-tron;55 e-tron quattro;283800
+Audi;Q4 Sportback e-tron;40 e-tron;224300
+Audi;Q4 Sportback e-tron;45 e-tron;260100
+Audi;Q4 Sportback e-tron;45 e-tron quattro;272700
+Audi;Q4 Sportback e-tron;55 e-tron quattro;295100
+Audi;A1 Sportback;Advanced 30 TFSI 6 biegów;113000
+Audi;A1 Sportback;Advanced 30 TFSI S tronic;120900
+Audi;A1 Sportback;Advanced 35 TFSI S tronic;123900
+Audi;A3 Sportback;30 TFSI 6 biegów;122700
+Audi;A3 Sportback;35 TFSI 6 biegów;131800
+Audi;A3 Sportback;30 TFSI S tronic;131900
+Audi;A3 Sportback;30 TDI 6 biegów;139400
+Audi;A3 Sportback;35 TFSI S tronic;141000
+Audi;A3 Sportback;35 TDI S tronic;156200
+Audi;A3 Limousine;30 TFSI 6 biegów;125700
+Audi;A3 Limousine;35 TFSI 6 biegów;134800
+Audi;A3 Limousine;30 TFSI S tronic;134900
+Audi;A3 Limousine;30 TDI 6 biegów;142400
+Audi;A3 Limousine;35 TFSI S tronic;144000
+Audi;A3 Limousine;35 TDI S tronic;159200
+Audi;A3 allstreet;35 TFSI 6 biegów;141700
+Audi;A3 allstreet;35 TFSI S tronic;150900
+Audi;A3 allstreet;35 TDI S tronic;166100
+Audi;A3 Sportback;TFSI e S line 45 TFSI e S tronic;206900
+Audi;S3 Sportback;TFSI quattro S tronic;231800
+Audi;S3 Limousine;TFSI quattro S tronic;234800
+BMW;iX;Drive45;375500
+BMW;iX;xDrive60;450000
+BMW;iX;M70 xDrive;560000
+BMW;i7;eDrive50 Limuzyna;540000
+BMW;i7;xDrive60 Limuzyna;650000
+BMW;i7;M70 xDrive Limuzyna;820000
+BMW;i5;eDrive40 Touring;345500
+BMW;i5;xDrive40 Touring;370500
+BMW;i5;M60 xDrive Touring;502500
+BMW;i5;eDrive40 Limuzyna;335000
+BMW;i5;xDrive40 Limuzyna;360000
+BMW;i5;M60 xDrive Limuzyna;492000

@@ -1,0 +1,180 @@
+BMW;iX;Drive45;375500
+BMW;iX;xDrive60;450000
+BMW;iX;M70 xDrive;560000
+BMW;i7;eDrive50 Limuzyna;540000
+BMW;i7;xDrive60 Limuzyna;650000
+BMW;i7;M70 xDrive Limuzyna;820000
+BMW;i5;eDrive40 Touring;345500
+BMW;i5;xDrive40 Touring;370500
+BMW;i5;M60 xDrive Touring;502500
+BMW;i5;eDrive40 Limuzyna;335000
+BMW;i5;xDrive40 Limuzyna;360000
+BMW;i5;M60 xDrive Limuzyna;492000
+BMW i4 eDrive35 Gran Coupe;248000
+BMW i4 eDrive40 Gran Coupe;280000
+BMW i4 xDrive40 Gran Coupe;300000
+BMW i4 M50 xDrive Gran Coupe;350000
+BMW iX2 eDrive20;232500
+BMW iX2 xDrive30;269500
+BMW iX1 eDrive20;223500
+BMW iX1 xDrive30;260500
+BMW XM 50e;675000
+BMW XM;960000
+BMW XM Label;1110000
+BMW X7 xDrive40i;517500
+BMW X7 M60i xDrive;680000
+BMW X7 xDrive40d;527500
+BMW X6 xDrive40i;452500
+BMW X6 M60i xDrive;588200
+BMW X6 M Competition;757500
+BMW X6 xDrive30d;433000
+BMW X6 xDrive40d;467500
+BMW X5 xDrive50e;472500
+BMW X5 xDrive40i;422500
+BMW X5 M60i xDrive;555000
+BMW X5 M Competition;727500
+BMW X5 xDrive30d;403000
+BMW X5 xDrive40d;437500
+BMW X4 xDrive20i;260000
+BMW X4 xDrive30i;290000
+BMW X4 M40i;363000
+BMW X4 M;484000
+BMW X4 xDrive20d;270000
+BMW X4 xDrive30d;310000
+BMW X4 M40d;363000
+BMW X3 30e xDrive;285000
+BMW X3 20 xDrive;256500
+BMW X3 M50 xDrive;372500
+BMW X3 20d xDrive;266500
+BMW X3 40d xDrive;301500
+BMW X2 sDrive20i;204000
+BMW X2 M35i xDrive;283000
+BMW X2 sDrive18d;214000
+BMW X2 sDrive20d;220000
+BMW X2 xDrive20d;229000
+BMW X1 xDrive25e;234500
+BMW X1 xDrive30e;248500
+BMW X1 sDrive18i;185000
+BMW X1 sDrive20i;195000
+BMW X1 xDrive23i;220000
+BMW X1 M35i xDrive;274000
+BMW X1 sDrive18d;205000
+BMW X1 sDrive20d;211000
+BMW X1 xDrive20d;220000
+BMW X1 xDrive23d;235000
+BMW M850i xDrive Gran Coupe;618500
+BMW M8 Gran Coupe;780000
+BMW M850i xDrive Cabrio;672000
+BMW M8 Cabrio;834000
+BMW M850i xDrive Coupe;633500
+BMW M8 Coupe;795500
+BMW 750e xDrive Limuzyna;655500
+BMW M760e xDrive Limuzyna;745500
+BMW 740d xDrive Limuzyna;560500
+BMW M5 Limuzyna;687500
+BMW M5 Touring;698000
+BMW 420i Gran Coupe;230500
+BMW 430i xDrive Gran Coupe;265500
+BMW M440i xDrive Gran Coupe;350500
+BMW 420d Gran Coupe;245500
+BMW 420d xDrive Gran Coupe;255500
+BMW 430d xDrive Gran Coupe;300500
+BMW M440i xDrive Cabrio;390500
+BMW M4 Competition M xDrive Cabrio;542500
+BMW M440d xDrive Cabrio;390500
+BMW M440i xDrive Coupe;350500
+BMW M4 Coupe;462500
+BMW M4 Competition Coupe;487500
+BMW M4 Competition M xDrive Coupe;517500
+BMW M4 CS Coupe;765000
+BMW M440d xDrive Coupe;350500
+BMW M340i xDrive Limuzyna;327500
+BMW M3 Limuzyna;452500
+BMW M3 Competition Limuzyna;477500
+BMW M3 Competition M xDrive Limuzyna;507500
+BMW M340d xDrive Limuzyna;327500
+BMW M340i xDrive Touring;334000
+BMW M3 Competition M xDrive Touring;512500
+BMW M3 CS Touring;740000
+BMW M340d xDrive Touring;334000
+BMW 216 Gran Coupe;142000
+BMW 220 Gran Coupe;164000
+BMW 223 xDrive Gran Coupe;190000
+BMW M235 xDrive Gran Coupe;250000
+BMW 218d Gran Coupe;170000
+BMW 220d Gran Coupe;180000
+BMW M240i xDrive Coupe;290000
+BMW M2 Coupe;367500
+BMW 116;127000
+BMW 120;149000
+BMW 123 xDrive;175000
+BMW M135 xDrive;235000
+BMW 118d;155000
+BMW 120d;165000
+BMW Z4 sDrive20i;247500
+BMW Z4 sDrive30i;272500
+BMW Z4 M40i;342500
+BMW 840i Coupe;493500
+BMW 840i xDrive Coupe;510500
+BMW 840d xDrive Coupe;519000
+BMW 840i Cabrio;532000
+BMW 840i xDrive Cabrio;549500
+BMW 840d xDrive Cabrio;557500
+BMW 840i Gran Coupe;478000
+BMW 840i xDrive Gran Coupe;495500
+BMW 840d xDrive Gran Coupe;503500
+BMW 530e Limuzyna;307500
+BMW 530e xDrive Limuzyna;322500
+BMW 550e xDrive Limuzyna;387500
+BMW 520i Limuzyna;262500
+BMW 520d Limuzyna;277500
+BMW 520d xDrive Limuzyna;292500
+BMW 540d xDrive Limuzyna;347500
+BMW 530e Touring;318000
+BMW 530e xDrive Touring;333000
+BMW 550e xDrive Touring;398000
+BMW 520i Touring;273000
+BMW 520d Touring;288000
+BMW 520d xDrive Touring;303000
+BMW 540d xDrive Touring;358000
+BMW 420i Coupe;230500
+BMW 430i xDrive Coupe;265500
+BMW 420d Coupe;245500
+BMW 420d xDrive Coupe;255500
+BMW 430d xDrive Coupe;300500
+BMW 420i Cabrio;265500
+BMW 430i xDrive Cabrio;300500
+BMW 420d Cabrio;280500
+BMW 430d Cabrio;325500
+BMW 330e Limuzyna;255000
+BMW 330e xDrive Limuzyna;265000
+BMW 318i Limuzyna;192500
+BMW 320i Limuzyna;212500
+BMW 320i xDrive Limuzyna;222500
+BMW 330i xDrive Limuzyna;245000
+BMW 318d Limuzyna;207500
+BMW 320d Limuzyna;227500
+BMW 320d xDrive Limuzyna;237500
+BMW 330d xDrive Limuzyna;265000
+BMW 330e Touring;261500
+BMW 330e xDrive Touring;271500
+BMW 318i Touring;199000
+BMW 320i Touring;219000
+BMW 330i xDrive Touring;251500
+BMW 318d Touring;214000
+BMW 320d Touring;234000
+BMW 320d xDrive Touring;244000
+BMW 330d xDrive Touring;271500
+BMW 218i Coupe;200000
+BMW 220i Coupe;210000
+BMW 230i Coupe;230000
+BMW 220d Coupe;225000
+BMW 225e xDrive Active Tourer;215500
+BMW 230e xDrive Active Tourer;229500
+BMW 216i Active Tourer;159000
+BMW 218i Active Tourer;165000
+BMW 220i Active Tourer;173000
+BMW 223i xDrive Active Tourer;194000
+BMW 218d Active Tourer;179000
+BMW 220d Active Tourer;184000
+BMW 223d xDrive Active Tourer;205000
