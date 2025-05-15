@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import DataTable from "./components/DataTable";
 import PriceComparisonChart from "./components/PriceComparisonChart";
 import ExportCSV from "./components/ExportCSV";
 import logoImage from './AutoComplete1.jpg';
 import backImage from './background.png';
+import dataset from './Dane.txt';
 import { motion, AnimatePresence } from "framer-motion";
 import { BarChart4, Download, SlidersHorizontal } from "lucide-react";
 
@@ -17,35 +19,23 @@ interface CarModel {
 
 const App: React.FC = () => {
   const [carData, setCarData] = useState<CarModel[]>([]);
-  const [section, setSection] = useState<string>("");
-  const [selectedBrand, setSelectedBrand] = useState<string>("");
-  const [selectedSegment, setSelectedSegment] = useState<string>("");
-  const [showChart, setShowChart] = useState<boolean>(false);
-  const [theme, setTheme] = useState<string>("dark");
-  const [language, setLanguage] = useState<string>("en");
-  const [selectedModels, setSelectedModels] = useState([
-    { brand: '', model: '', engine: '' },
-    { brand: '', model: '', engine: '' }
-  ]);
-  const [showCompareTable, setShowCompareTable] = useState(false);
-
-  useEffect(() => {
-    fetch("/cars.txt")
-      .then((res) => res.text())
-      .then((text) => {
-        const lines = text.split("\n");
-        const parsed = lines.map((line, index) => {
-          const [brand, model, engine, price] = line.trim().split(";");
-          return {
-            id: index + 1,
-            brand,
-            model,
-            engine,
-            segment: model.includes("SUV") ? "SUV" : "Sedan",
-            price: Number(price),
-          };
-        });
-        setCarData(parsed);
+   useEffect(() => {
+  fetch(dataset)
+    .then((res) => res.text())
+    .then((text) => {
+      const lines = text.split("\n");
+      const parsed = lines.map((line, index) => {
+        const [brand, model, engine, price] = line.trim().split(";");
+        return {
+          id: index + 1,
+          brand,
+          model,
+          engine,
+          segment: 'SUV',
+          price: Number(price),
+        };
+      });
+      setCarData(parsed);
       })
       .catch((err) => console.error("Błąd wczytywania danych:", err));
   }, []);
