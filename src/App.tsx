@@ -40,6 +40,23 @@ const App: React.FC = () => {
       .catch((err) => console.error("Błąd wczytywania danych:", err));
   }, []);
 
+  const [selectedModels, setSelectedModels] = useState([
+    { brand: '', model: '', engine: '' },
+    { brand: '', model: '', engine: '' }
+  ]);
+
+  const [selectedBrand, setSelectedBrand] = useState<string>("");
+  const [selectedSegment, setSelectedSegment] = useState<string>("");
+  const [showChart, setShowChart] = useState<boolean>(false);
+  const [section, setSection] = useState<string>("");
+  const [theme, setTheme] = useState<string>("dark");
+  const [language, setLanguage] = useState<string>("en");
+  const [showCompareTable, setShowCompareTable] = useState<boolean>(false);
+
+  const handleChartToggle = () => {
+    setShowChart(!showChart);
+  };
+
   const t = (en: string, pl: string) => language === "en" ? en : pl;
   const segments = Array.from(new Set(carData.map((car) => car.segment)));
 
