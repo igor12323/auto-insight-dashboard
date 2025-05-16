@@ -103,7 +103,7 @@ const App: React.FC = () => {
         <img
           src={theme === 'dark' ? logoImage_dark : logoImage_light}
           alt="Logo"
-          className="h-12 sm:h-16 w-auto cursor-pointer"
+          className="h-16 sm:h-20 w-auto cursor-pointer"
           onClick={() => {
             setSection("");
             setSelectedModels([
