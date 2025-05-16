@@ -9,10 +9,6 @@ import dataset from './Dane.txt';
 import { motion, AnimatePresence } from "framer-motion";
 import { BarChart4, Download, SlidersHorizontal } from "lucide-react";
 
-const logoFinal =
-theme === 'dark'
-    ? logoImage_dark // wersja na ciemne tło (jaśniejsza)
-    : logoImage_light; // wersja na jasne tło (ciemniejsza)
 
 interface CarModel {
   id: number;
@@ -105,7 +101,7 @@ const App: React.FC = () => {
     >
       <div className="flex flex-wrap justify-between items-center mb-6 gap-4">
         <img
-          src={logoFinal}
+          src={theme === 'dark' ? logoImage_dark : logoImage_light}
           alt="Logo"
           className="h-12 sm:h-16 w-auto cursor-pointer"
           onClick={() => {
