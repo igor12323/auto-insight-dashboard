@@ -2,11 +2,17 @@ import React, { useEffect, useState } from "react";
 import DataTable from "./components/DataTable";
 import PriceComparisonChart from "./components/PriceComparisonChart";
 import ExportCSV from "./components/ExportCSV";
-import logoImage from './AutoComplete1.jpg';
-import backImage from './background.png';
+import logoImage_dark from './AutoComplete1_dark.png';
+import logoImage_light from './AutoComplete1_light.png';
+import backImage from './background.jpg';
 import dataset from './Dane.txt';
 import { motion, AnimatePresence } from "framer-motion";
 import { BarChart4, Download, SlidersHorizontal } from "lucide-react";
+
+const logoFinal =
+theme === 'dark'
+    ? logoImage_dark // wersja na ciemne tło (jaśniejsza)
+    : logoImage_light; // wersja na jasne tło (ciemniejsza)
 
 interface CarModel {
   id: number;
@@ -99,7 +105,7 @@ const App: React.FC = () => {
     >
       <div className="flex flex-wrap justify-between items-center mb-6 gap-4">
         <img
-          src={logoImage}
+          src={logoFinal}
           alt="Logo"
           className="h-12 sm:h-16 w-auto cursor-pointer"
           onClick={() => {
