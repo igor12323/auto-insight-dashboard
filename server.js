@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 / Ładowanie routerów z folderu api/
-const markiRouter = require('./api/marki');
+const markiRouter = require('./api/data/marki');
 app.use('/api/data/marki', markiRouter);
 // Serwuj statyczne pliki z folderu dist
 app.use(express.static(path.join(__dirname, 'dist')));
