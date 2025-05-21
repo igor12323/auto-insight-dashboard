@@ -4,6 +4,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import markiRouter from './api/data/marki.js';
 
+const router = express.Router();
+
 // Dla ES Module importów
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,4 +26,5 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
 export default router;
