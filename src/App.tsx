@@ -20,6 +20,18 @@ interface CarModel {
   price: number;
 }
 
+const [brandList, setBrandList] = useState<string[]>([]);
+
+useEffect(() => {
+  fetch("https://auto-insight-dashboard.onrender.com/data/marki") // ← podmień na swój adres API
+    .then((res) => res.json())
+    .then((data) => {
+      const uniqueBrands = [...new Set(data.map((item: { marka: string }) => item.marka))];
+      setBrandList(uniqueBrands);
+    })
+    .catch((err) => console.error("Błąd pobierania marek:", err));
+}, []);
+
 const App: React.FC = () => {
   const [carData, setCarData] = useState<CarModel[]>([]);
    useEffect(() => {
@@ -151,7 +163,7 @@ const App: React.FC = () => {
                 <div key={index} className="space-y-2">
                   <select className="w-full p-2 border border-gray-300 text-black rounded" value={item.brand} onChange={(e) => handleSelectChange(index, 'brand', e.target.value)}>
                     <option value="">--{t("Select Brand", "Wybierz markę")}--</option>
-                    {[...new Set(carData.map((c) => c.brand))].map((brand) => (
+                    {brandList.map((brand) => (
                       <option key={brand} value={brand}>{brand}</option>
                     ))}
                   </select>
@@ -211,7 +223,7 @@ const App: React.FC = () => {
                 onChange={(e) => setSelectedBrand(e.target.value)}
               >
                 <option value="">--{t("Select", "Wybierz")}--</option>
-                {Array.from(new Set(carData.map((car) => car.brand))).map((brand) => (
+                {brandList.map((brand)  => (
                   <option key={brand} value={brand}>
                     {brand}
                   </option>
