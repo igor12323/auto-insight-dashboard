@@ -5,6 +5,7 @@ import ExportCSV from "./components/ExportCSV";
 import logoImage_dark from './AutoComplete_dark.png';
 import logoImage_light from './AutoComplete_light.png';
 import backImage from './background.jpg';
+import backImageLight from './background_light.jpg';
 import dataset from './Dane.txt';
 import { motion, AnimatePresence } from "framer-motion";
 import { BarChart4, Download, SlidersHorizontal } from "lucide-react";
@@ -94,7 +95,7 @@ const App: React.FC = () => {
     <div
       className={`px-4 py-6 transition-colors duration-500 min-h-screen ${theme === "dark" ? "bg-gray-900 text-white" : "bg-gray-100 text-black"}`}
       style={{
-        backgroundImage: theme === "dark" ? `url(${backImage})` : undefined,
+        backgroundImage: theme === "dark" ? `url(${backImage})` : `url(${backImageLight})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
