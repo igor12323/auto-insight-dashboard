@@ -48,12 +48,12 @@ const App: React.FC = () => {
 
 	useEffect(() => {
   	fetch("https://auto-insight-dashboard.onrender.com/api/data/marki") // ← podmień na swój adres API
-    	.then((res) => 
+    	.then((res) => { 
 		if (!res.ok) {
       		throw new Error(`Błąd HTTP: ${res.status}`);
     	}
     	return res.json();
-  	}))
+  	})
     	.then((data) => {
       	const uniqueBrands = [...new Set(data.map((item: { marka: string }) => item.marka))];
       	setBrandList(uniqueBrands);
