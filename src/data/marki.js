@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 
 // Połączenie z PostgreSQL
 const pool = new Pool({
-  connectionString: postgresql://car_data_user:VTcvQQvxINPHca2BspdZekupqhIt3Euc@dpg-d0idpommcj7s73digpf0-a/car_data,
+  connectionString: process.env.DATABASE_URL,
 });
 
 // Endpoint do pobrania marek
