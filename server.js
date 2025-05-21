@@ -2,6 +2,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import markiRouter from './api/data/marki.js';
 
 // Dla ES Module importów
 const __filename = fileURLToPath(import.meta.url);
@@ -11,7 +12,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 / Ładowanie routerów z folderu api/
-const markiRouter = require('./api/data/marki');
 app.use('/api/data/marki', markiRouter);
 // Serwuj statyczne pliki z folderu dist
 app.use(express.static(path.join(__dirname, 'dist')));
