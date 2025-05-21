@@ -3,7 +3,8 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import markiRouter from './api/data/marki.js';
-
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Dla ES Module importów
 const __filename = fileURLToPath(import.meta.url);
