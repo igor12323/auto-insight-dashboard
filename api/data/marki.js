@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     res.json(result.rows);
   } catch (err) {
     console.error('Błąd zapytania:', err);
-    res.status(500).send('Błąd serwera');
+    res.status(500).send('Błąd serwera. Adres: '+ process.env.DATABASE_URL);
   }
 });
 
