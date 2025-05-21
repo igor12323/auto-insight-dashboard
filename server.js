@@ -10,6 +10,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+/ Ładowanie routerów z folderu api/
+const markiRouter = require('./api/marki');
+app.use('/api/data/marki', markiRouter);
 // Serwuj statyczne pliki z folderu dist
 app.use(express.static(path.join(__dirname, 'dist')));
 

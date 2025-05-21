@@ -23,7 +23,7 @@ interface CarModel {
 const [brandList, setBrandList] = useState<string[]>([]);
 
 useEffect(() => {
-  fetch("https://auto-insight-dashboard.onrender.com/data/marki") // ← podmień na swój adres API
+  fetch("https://auto-insight-dashboard.onrender.com/api/data/marki") // ← podmień na swój adres API
     .then((res) => res.json())
     .then((data) => {
       const uniqueBrands = [...new Set(data.map((item: { marka: string }) => item.marka))];

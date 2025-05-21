@@ -1,17 +1,12 @@
-require('dotenv').config();
 const express = require('express');
+const router = express.Router();
 const { Pool } = require('pg');
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-// Połączenie z PostgreSQL
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DATABASE_URL || "postgresql://user:pass@host/db"
 });
 
-// Endpoint do pobrania marek
-app.get('/marki', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const result = await pool.query('SELECT marka FROM marki');
     res.json(result.rows);
@@ -21,7 +16,4 @@ app.get('/marki', async (req, res) => {
   }
 });
 
-// Uruchomienie serwera
-app.listen(port, () => {
-  console.log(`Serwer działa na http://localhost:${port}`);
-});
+module.exports = router;
