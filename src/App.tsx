@@ -20,17 +20,6 @@ interface CarModel {
   price: number;
 }
 
-const [brandList, setBrandList] = useState<string[]>([]);
-
-useEffect(() => {
-  fetch("https://auto-insight-dashboard.onrender.com/api/data/marki") // ← podmień na swój adres API
-    .then((res) => res.json())
-    .then((data) => {
-      const uniqueBrands = [...new Set(data.map((item: { marka: string }) => item.marka))];
-      setBrandList(uniqueBrands);
-    })
-    .catch((err) => console.error("Błąd pobierania marek:", err));
-}, []);
 
 const App: React.FC = () => {
   const [carData, setCarData] = useState<CarModel[]>([]);
@@ -54,6 +43,23 @@ const App: React.FC = () => {
       })
       .catch((err) => console.error("Błąd wczytywania danych:", err));
   }, []);
+
+	const [brandList, setBrandList] = useState<string[]>([]);
+
+	useEffect(() => {
+  	fetch("https://auto-insight-dashboard.onrender.com/api/data/marki") // ← podmień na swój adres API
+    	.then((res) => 
+		if (!res.ok) {
+      		throw new Error(`Błąd HTTP: ${res.status}`);
+    	}
+    	return res.json();
+  	}))
+    	.then((data) => {
+      	const uniqueBrands = [...new Set(data.map((item: { marka: string }) => item.marka))];
+      	setBrandList(uniqueBrands);
+    	})
+    	.catch((err) => console.error("Błąd pobierania marek:", err));
+	}, []);
 
   const [selectedModels, setSelectedModels] = useState([
     { brand: '', model: '', engine: '' },
