@@ -104,6 +104,13 @@ const App: React.FC = () => {
     return [];
   }
 };
+const [models, setModels] = useState<string[]>([]);
+
+useEffect(() => {
+  if (!item.brand) return;
+
+  getModels1(item.brand).then(setModels);
+}, [item.brand]);
   const getEngines = (model: string) => Array.from(new Set(carData.filter(c => c.model === model).map(c => `${c.engine} (${c.segment}) - ${c.price}`)));
 
   const handleSelectChange = (index: number, field: string, value: string) => {
@@ -193,7 +200,7 @@ const App: React.FC = () => {
                   </select>
                   <select className="w-full p-2 border border-gray-300 text-black rounded" value={item.model} onChange={(e) => handleSelectChange(index, 'model', e.target.value)}>
                     <option value="">--{t("Select Model", "Wybierz model")}--</option>
-                    {getModels1(item.brand).map((model) => (
+                    {models.map((model) => (
                       <option key={model} value={model}>{model}</option>
                     ))}
                   </select>
