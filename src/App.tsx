@@ -88,8 +88,12 @@ const App: React.FC = () => {
   const getModels = (brand: string) => Array.from(new Set(carData.filter(c => c.brand === brand).map(c => c.model)));
   const getModels1 = async (brand: string): Promise<string[]> => {
   try {
-    const res = await fetch(`https://twoj-api.pl/api/data/modele/${brand}`);
+    const res = await fetch(`https://auto-insight-dashboard.onrender.com/api/data/modele/${brand}`);
     const data = await res.json(); // [{ model: 'A3' }, { model: 'A4' }]
+    if (!Array.isArray(data)) {
+      console.warn("API nie zwróciło listy modeli:", data);
+      return [];
+    }
     return data.map((item: { model: string }) => item.model);
   } catch (err) {
     console.error('Błąd pobierania modeli:', err);
