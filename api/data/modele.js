@@ -9,6 +9,10 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
 
+router.get('/', (req, res) => {
+  res.status(400).json({ error: 'Brak parametru marka w URL.' });
+});
+
 router.get('/:marka', async (req, res) => {
   const marka = req.params.marka;
   try {
