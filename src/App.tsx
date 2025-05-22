@@ -87,6 +87,11 @@ const App: React.FC = () => {
 
   const getModels = (brand: string) => Array.from(new Set(carData.filter(c => c.brand === brand).map(c => c.model)));
   const getModels1 = async (brand: string): Promise<string[]> => {
+  if (!brand || brand.trim() === "") {
+    console.warn("Nie podano marki — pomijam pobieranie modeli.");
+    return [];
+  }
+
   try {
     const res = await fetch(`https://auto-insight-dashboard.onrender.com/api/data/modele/${brand}`);
     if (!res.ok) {
