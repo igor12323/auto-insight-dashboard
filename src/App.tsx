@@ -86,6 +86,16 @@ const App: React.FC = () => {
     : [];
 
   const getModels = (brand: string) => Array.from(new Set(carData.filter(c => c.brand === brand).map(c => c.model)));
+  const getModels1 = async (brand: string): Promise<string[]> => {
+  try {
+    const res = await fetch(`https://twoj-api.pl/api/data/modele/${brand}`);
+    const data = await res.json(); // [{ model: 'A3' }, { model: 'A4' }]
+    return data.map((item: { model: string }) => item.model);
+  } catch (err) {
+    console.error('Błąd pobierania modeli:', err);
+    return [];
+  }
+};
   const getEngines = (model: string) => Array.from(new Set(carData.filter(c => c.model === model).map(c => `${c.engine} (${c.segment}) - ${c.price}`)));
 
   const handleSelectChange = (index: number, field: string, value: string) => {
@@ -175,7 +185,7 @@ const App: React.FC = () => {
                   </select>
                   <select className="w-full p-2 border border-gray-300 text-black rounded" value={item.model} onChange={(e) => handleSelectChange(index, 'model', e.target.value)}>
                     <option value="">--{t("Select Model", "Wybierz model")}--</option>
-                    {getModels(item.brand).map((model) => (
+                    {getModels1(item.brand).map((model) => (
                       <option key={model} value={model}>{model}</option>
                     ))}
                   </select>
