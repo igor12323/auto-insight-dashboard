@@ -104,7 +104,7 @@ const App: React.FC = () => {
     return [];
   }
 };
-const [models, setModels] = useState<string[]>([]);
+const [modelsPerBrand, setModelsPerBrand] = useState<Record<number, string[]>>({});
 
 useEffect(() => {
   if (!item.brand) return;
@@ -122,6 +122,10 @@ useEffect(() => {
     };
     setSelectedModels(updated);
     setShowCompareTable(false);
+    if (field === 'brand') {
+    getModels1(value).then((models) => {
+      setModelsPerBrand((prev) => ({ ...prev, [index]: models }));
+    });
   };
 
   const getCarDetails = (selected: { brand: string; model: string; engine: string }) => {
@@ -200,8 +204,8 @@ useEffect(() => {
                   </select>
                   <select className="w-full p-2 border border-gray-300 text-black rounded" value={item.model} onChange={(e) => handleSelectChange(index, 'model', e.target.value)}>
                     <option value="">--{t("Select Model", "Wybierz model")}--</option>
-                    {models.map((model) => (
-                      <option key={model} value={model}>{model}</option>
+                    {(modelsPerBrand[index] ?? []).map((model) => (
+  			<option key={model} value={model}>{model}</option>
                     ))}
                   </select>
                   <select className="w-full p-2 border border-gray-300 text-black rounded" value={item.engine} onChange={(e) => handleSelectChange(index, 'engine', e.target.value)}>
