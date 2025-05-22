@@ -89,8 +89,12 @@ const App: React.FC = () => {
   const getModels1 = async (brand: string): Promise<string[]> => {
   try {
     const res = await fetch(`https://auto-insight-dashboard.onrender.com/api/data/modele/${brand}`);
+    if (!res.ok) {
+      console.warn("Błąd odpowiedzi HTTP:", res.status);
+      return [];
+    }
     const data = await res.json(); // [{ model: 'A3' }, { model: 'A4' }]
-    if (!Array.isArray(data) || !res.ok) {
+    if (!Array.isArray(data)) {
       console.warn("API nie zwróciło listy modeli:", data);
       return [];
     }
