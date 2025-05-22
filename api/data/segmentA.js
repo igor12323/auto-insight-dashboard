@@ -11,7 +11,9 @@ const pool = new Pool({
 
 router.get('/', async (req, res) => {
   try {
-    const result = await pool.query('SELECT segment FROM segmenty WHERE typ_segmentu = 'A'');
+    const result = await pool.query(
+		'SELECT segment FROM segmenty WHERE typ_segmentu = $1'
+		['A']);
     res.json(result.rows);
   } catch (err) {
     console.error('Błąd zapytania:', err);
