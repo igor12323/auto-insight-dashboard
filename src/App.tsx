@@ -90,7 +90,7 @@ const App: React.FC = () => {
   try {
     const res = await fetch(`https://auto-insight-dashboard.onrender.com/api/data/modele/${brand}`);
     const data = await res.json(); // [{ model: 'A3' }, { model: 'A4' }]
-    if (!Array.isArray(data)) {
+    if (!Array.isArray(data) || !res.ok) {
       console.warn("API nie zwróciło listy modeli:", data);
       return [];
     }

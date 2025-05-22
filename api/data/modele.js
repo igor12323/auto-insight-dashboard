@@ -10,7 +10,7 @@ const pool = new Pool({
 });
 
 router.get('/', (req, res) => {
-  res.json([]));
+  res.status(400).json({ error: 'Brak parametru marka w URL.' });
 });
 
 router.get('/:marka', async (req, res) => {
