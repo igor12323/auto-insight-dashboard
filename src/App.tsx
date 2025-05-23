@@ -132,8 +132,8 @@ const App: React.FC = () => {
 
 //Pobieranie wwersji na podstawie wybranego modelu
     const getEngines1 = async (model: string): Promise<string[]> => {
-        if (!brand || brand.trim() === "") {
-            console.warn("Nie podano marki — pomijam pobieranie modeli.");
+        if (!model || model.trim() === "") {
+            console.warn("Nie podano modelu — pomijam pobieranie wersji.");
             return [];
         }
 
