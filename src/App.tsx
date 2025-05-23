@@ -127,6 +127,7 @@ const App: React.FC = () => {
                 setModelsPerBrand((prev) => ({ ...prev, [index]: models }));
             });
         };
+    };
 
         const getCarDetails = (selected: { brand: string; model: string; engine: string }) => {
             return carData.find(c => c.brand === selected.brand && c.model === selected.model && selected.engine.includes(c.engine));
@@ -307,7 +308,7 @@ const App: React.FC = () => {
             </div>
         );
     };
-};
+
 
     export default App;
 
