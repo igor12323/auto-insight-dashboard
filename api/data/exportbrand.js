@@ -14,11 +14,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:marka', async (req, res) => {
-  const model = req.params.model;
+  const marka = req.params.marka;
   try {
     const result = await pool.query(
-		'SELECT DISTINCT wersja_silnikowa FROM dane_samochody WHERE model = $1 ORDER BY wersja_silnikowa',
-		[model]);
+		'SELECT marka, model, wersja_silnikowa, cena FROM dane_samochody WHERE marka = $1 ORDER BY model',
+		[marka]);
     res.json(result.rows);
   } catch (err) {
     console.error('Błąd zapytania:', err);

@@ -44,8 +44,9 @@ const App: React.FC = () => {
             .catch((err) => console.error("Błąd wczytywania danych:", err));
     }, []);
 
+    //Zmienna przechowująca listę marek
     const [brandList, setBrandList] = useState<string[]>([]);
-
+    //UseEffect do pobrania listy marek z api
     useEffect(() => {
         fetch("https://auto-insight-dashboard.onrender.com/api/data/marki") // ← podmień na swój adres API
             .then((res) => {
@@ -60,12 +61,13 @@ const App: React.FC = () => {
             })
             .catch((err) => console.error("Błąd pobierania marek:", err));
     }, []);
+    //Koniec pobirania marek
 
+    //Stan początkowy zmiennych
     const [selectedModels, setSelectedModels] = useState([
         { brand: '', model: '', engine: '' },
         { brand: '', model: '', engine: '' }
     ]);
-
     const [selectedBrand, setSelectedBrand] = useState<string>("");
     const [selectedSegment, setSelectedSegment] = useState<string>("");
     const [showChart, setShowChart] = useState<boolean>(false);
@@ -77,6 +79,7 @@ const App: React.FC = () => {
     const handleChartToggle = () => {
         setShowChart(!showChart);
     };
+    //Koniec stanów początkowych zmiennych
 
     const t = (en: string, pl: string) => language === "en" ? en : pl;
     const segments = Array.from(new Set(carData.map((car) => car.segment)));
@@ -85,7 +88,22 @@ const App: React.FC = () => {
         ? carData.filter((car) => car.segment === selectedSegment)
         : [];
 
-    const getModels = (brand: string) => Array.from(new Set(carData.filter(c => c.brand === brand).map(c => c.model)));
+    //Dane do exportu
+    const [brandExportData, setBrandExportData] = useState<any[]>([]);
+
+    useEffect(() => {
+        if (!selectedBrand) return;
+
+        fetch(`https://auto-insight-dashboard.onrender.com/api/data/exportbrand/${selectedBrand}`)
+            .then((res) => res.json())
+            .then((data) => setBrandExportData(data))
+            .catch((err) => {
+                console.error("Błąd pobierania danych do eksportu:", err);
+                setBrandExportData([]);
+            });
+    }, [selectedBrand]);
+
+    //Pobieranie modeli na podstawie wybranej marki
     const getModels1 = async (brand: string): Promise<string[]> => {
         if (!brand || brand.trim() === "") {
             console.warn("Nie podano marki — pomijam pobieranie modeli.");
@@ -110,8 +128,10 @@ const App: React.FC = () => {
         }
     };
     const [modelsPerBrand, setModelsPerBrand] = useState<Record<number, string[]>>({});
+    //Koniec pobierania modeli
 
     const getEngines = (model: string) => Array.from(new Set(carData.filter(c => c.model === model).map(c => `${c.engine} (${c.segment}) - ${c.price}`)));
+
 
     const handleSelectChange = (index: number, field: string, value: string) => {
         const updated = [...selectedModels];
@@ -267,7 +287,7 @@ const App: React.FC = () => {
                                 </select>
                             </div>
                             {selectedBrand && (
-                                <ExportCSV data={carData.filter((car) => car.brand === selectedBrand)} />
+                                <ExportCSV data={brandExportData} />
                             )}
                         </motion.section>
                     )}
