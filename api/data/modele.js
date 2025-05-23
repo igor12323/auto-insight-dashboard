@@ -17,7 +17,7 @@ router.get('/:marka', async (req, res) => {
   const marka = req.params.marka;
   try {
     const result = await pool.query(
-		'SELECT DISTINCT model FROM dane_samochody WHERE marka = $1',
+		'SELECT DISTINCT model FROM dane_samochody WHERE marka = $1 ORDER BY model',
 		[marka]);
     res.json(result.rows);
   } catch (err) {
