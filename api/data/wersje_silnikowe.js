@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
   res.status(400).json({ error: 'Brak parametru model w URL.' });
 });
 
-router.get('/:marka', async (req, res) => {
+router.get('/:model', async (req, res) => {
   const model = req.params.model;
   try {
     const result = await pool.query(
