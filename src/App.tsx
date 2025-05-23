@@ -130,6 +130,33 @@ const App: React.FC = () => {
     const [modelsPerBrand, setModelsPerBrand] = useState<Record<number, string[]>>({});
     //Koniec pobierania modeli
 
+//Pobieranie wwersji na podstawie wybranego modelu
+    const getEngines1 = async (model: string): Promise<string[]> => {
+        if (!brand || brand.trim() === "") {
+            console.warn("Nie podano marki — pomijam pobieranie modeli.");
+            return [];
+        }
+
+        try {
+            const res = await fetch(`https://auto-insight-dashboard.onrender.com/api/data/wersje_silnikowe/${model}`);
+            if (!res.ok) {
+                console.warn("Błąd odpowiedzi HTTP:", res.status);
+                return [];
+            }
+            const data = await res.json(); // [{ model: 'A3' }, { model: 'A4' }]
+            if (!Array.isArray(data)) {
+                console.warn("API nie zwróciło listy wersji:", data);
+                return [];
+            }
+            return data.map((item: { engine: string }) => item.engine);
+        } catch (err) {
+            console.error('Błąd pobierania wersji:', err);
+            return [];
+        }
+    };
+    const [modelsPerModel, setModelsPerModel] = useState<Record<number, string[]>>({});
+    //Koniec pobierania wersji
+
     const getEngines = (model: string) => Array.from(new Set(carData.filter(c => c.model === model).map(c => `${c.engine} (${c.segment}) - ${c.price}`)));
 
 
@@ -231,7 +258,7 @@ const App: React.FC = () => {
                                         </select>
                                         <select className="w-full p-2 border border-gray-300 text-black rounded" value={item.engine} onChange={(e) => handleSelectChange(index, 'engine', e.target.value)}>
                                             <option value="">--{t("Select Engine Version", "Wybierz wersję silnikową")}--</option>
-                                            {getEngines(item.model).map((engine) => (
+                                            {(modelsPerModel[index] ?? []).map((engine) => (
                                                 <option key={engine} value={engine}>{engine}</option>
                                             ))}
                                         </select>
