@@ -19,6 +19,7 @@ router.get('/:marka', async (req, res) => {
     const result = await pool.query(
 		'SELECT marka, model, wersja_silnikowa, cena FROM dane_samochody WHERE marka = $1 ORDER BY model',
 		[marka]);
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.json(result.rows);
   } catch (err) {
     console.error('Błąd zapytania:', err);
