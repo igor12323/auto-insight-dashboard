@@ -154,7 +154,7 @@ const App: React.FC = () => {
             return [];
         }
     };
-    const [modelsPerModel, setModelsPerModel] = useState<Record<number, string[]>>({});
+    const [enginesPerModel, setEnginesPerModel] = useState<Record<number, string[]>>({});
     //Koniec pobierania wersji
 
     const getEngines = (model: string) => Array.from(new Set(carData.filter(c => c.model === model).map(c => `${c.engine} (${c.segment}) - ${c.price}`)));
@@ -174,7 +174,13 @@ const App: React.FC = () => {
                 setModelsPerBrand((prev) => ({ ...prev, [index]: models }));
             });
         };
+        if (field === 'model') {
+            getEngines1(value).then((engines) => {
+                setEnginesPerModel((prev) => ({ ...prev, [index]: engines }));
+            });
+        };
     };
+
 
         const getCarDetails = (selected: { brand: string; model: string; engine: string }) => {
             return carData.find(c => c.brand === selected.brand && c.model === selected.model && selected.engine.includes(c.engine));
@@ -258,7 +264,7 @@ const App: React.FC = () => {
                                         </select>
                                         <select className="w-full p-2 border border-gray-300 text-black rounded" value={item.engine} onChange={(e) => handleSelectChange(index, 'engine', e.target.value)}>
                                             <option value="">--{t("Select Engine Version", "Wybierz wersję silnikową")}--</option>
-                                            {(modelsPerModel[index] ?? []).map((engine) => (
+                                            {(enginesPerModel[index] ?? []).map((engine) => (
                                                 <option key={engine} value={engine}>{engine}</option>
                                             ))}
                                         </select>
