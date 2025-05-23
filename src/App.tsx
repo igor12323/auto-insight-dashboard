@@ -148,7 +148,7 @@ const App: React.FC = () => {
                 console.warn("API nie zwróciło listy wersji:", data);
                 return [];
             }
-            return data.map((item: { engine: string }) => item.engine);
+            return data.map((item: { wersja_silnikowa: string }) => item.engine);
         } catch (err) {
             console.error('Błąd pobierania wersji:', err);
             return [];
