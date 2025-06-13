@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import DataTable from "./components/DataTable";
 import PriceComparisonChart from "./components/PriceComparisonChart";
 import ExportCSV from "./components/ExportCSV";
-import logoImage_dark from './AutoComplete_dark.png';
-import logoImage_light from './AutoComplete_light.png';
-import backImage from './background.jpg';
-import backImageLight from './background_light.jpg';
+import logoImage_dark from './Images/AutoComplete_dark.png';
+import logoImage_light from './Images/AutoComplete_light.png';
+import backImage from './Images/background.jpg';
+import backImageLight from './Images/background_light.jpg';
 import dataset from './Dane.txt';
 import { motion, AnimatePresence } from "framer-motion";
 import { BarChart4, Download, SlidersHorizontal } from "lucide-react";
@@ -284,7 +284,7 @@ const App: React.FC = () => {
                                                 <h4 className="font-bold text-lg">{car.model}</h4>
                                                 <p>{t("Brand", "Marka")}: {car.brand}</p>
                                                 <p>{t("Segment", "Segment")}: {car.segment}</p>
-                                                <p>{t("Price", "Cena")}: ${car.price}</p>
+                                                <p>{t("Price", "Cena")}: {car.price} PLN</p>
                                             </div>
                                         ) : (
                                             <div key={idx} className="text-red-600">{t("Incomplete selection", "Niepełny wybór")}</div>

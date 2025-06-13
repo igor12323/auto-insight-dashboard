@@ -8,6 +8,7 @@ import segmentBRouter from './api/data/segmentB.js';
 import modeleRouter from './api/data/modele.js';
 import wersjeRouter from './api/data/wersje_silnikowe.js';
 import exportRouter from './api/data/exportbrand.js';
+import daneSamochodRouter from './api/data/dane_samochod.js';
 
 // Dla ES Module importów
 const __filename = fileURLToPath(import.meta.url);
@@ -22,7 +23,8 @@ app.use('/api/data/segmentA',segmentARouter);
 app.use('/api/data/segmentB',segmentBRouter);
 app.use('/api/data/modele',modeleRouter);
 app.use('/api/data/wersje_silnikowe',wersjeRouter);
-app.use('/api/data/exportbrand',exportRouter);
+app.use('/api/data/dane_samochod',daneSamochodRouter);
+
 // Serwuj statyczne pliki z folderu dist
 app.use(express.static(path.join(__dirname, 'dist')));
 
